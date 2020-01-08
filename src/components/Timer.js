@@ -33,7 +33,7 @@ formatUnitOfTime(unitOfTime) {
 onSecondsChanged=(seconds) =>{
 seconds = parseInt(seconds);
 
-if (seconds && typeof seconds === 'number') {
+if (seconds) {
     if (seconds <= 359999) {
         this.setState(() => ({ seconds: seconds, time: seconds * 1000 }));
     }
@@ -59,7 +59,7 @@ if (this.state.status !== 'started') {
 }
 
 stopTimer=()=> {
-if (this.state.status && this.state.status === 'started') {
+if (this.state.status) {
 
     clearInterval(this.interval);
 
