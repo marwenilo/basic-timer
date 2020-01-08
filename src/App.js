@@ -1,13 +1,28 @@
-import React from 'react';
-import Timer from './components/Timer'
+import React, { Component } from 'react';
+import Timer from './components/Timer';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Timer />
-    </div>
-  );
+export default class App extends Component {
+  state={
+    time:0
+  }
+
+handelTime=(ms)=>{
+  this.setState({
+    time:ms
+  })
 }
 
-export default App;
+
+
+
+
+  render() {
+    return (
+      <div>
+        <Timer handelTime={this.handelTime} />
+      </div>
+    )
+  }
+}
+
